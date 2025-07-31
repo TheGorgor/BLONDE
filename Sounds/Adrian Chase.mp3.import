@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cetitwix2xrdb"
+path="res://.godot/imported/Adrian Chase.mp3-0628c60140874a05d0fdcc37fea4b822.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Adrian Chase.mp3"
+dest_files=["res://.godot/imported/Adrian Chase.mp3-0628c60140874a05d0fdcc37fea4b822.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
