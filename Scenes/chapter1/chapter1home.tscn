@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=4 uid="uid://cxkotyadcojmt"]
+
+[ext_resource type="TileSet" uid="uid://befmg8le2o8b" path="res://Tile Sets/home_tile_set.tres" id="1_aquux"]
+[ext_resource type="Script" uid="uid://bfkvsjuaff028" path="res://Scripts/chapter1scripts/home.gd" id="1_st4hv"]
+[ext_resource type="Texture2D" uid="uid://cu7ou1ec4s8hm" path="res://Things/bed.png" id="2_1svtn"]
+[ext_resource type="Texture2D" uid="uid://dejgpc2jw7mbj" path="res://Things/door.png" id="3_hfb84"]
+[ext_resource type="Script" uid="uid://c8r2pallegbcc" path="res://Scripts/chapter1scripts/home_exit.gd" id="4_0h851"]
+[ext_resource type="Texture2D" uid="uid://b5ble0sobm7dl" path="res://Character/character.png" id="4_1svtn"]
+[ext_resource type="Script" uid="uid://b1dbr4u7wsfqx" path="res://Scripts/blonde.gd" id="4_hfb84"]
+[ext_resource type="Script" uid="uid://bxe4acs24ani6" path="res://Scripts/chapter1scripts/sleep.gd" id="4_jfdoo"]
+[ext_resource type="AudioStream" uid="uid://cqd66has83h17" path="res://Sounds/Home.mp3" id="8_j1jao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h851"]
+size = Vector2(20, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st4hv"]
+size = Vector2(320, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1jao"]
+size = Vector2(142, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfdoo"]
+size = Vector2(79, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfb84"]
+size = Vector2(21, 59)
+
+[node name="Chapter1Home" type="Node2D"]
+script = ExtResource("1_st4hv")
+
+[node name="HomeCollisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeCollisions"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_0h851")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HomeCollisions"]
+position = Vector2(327, -33)
+shape = SubResource("RectangleShape2D_0h851")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HomeCollisions"]
+position = Vector2(160, 27)
+shape = SubResource("RectangleShape2D_st4hv")
+
+[node name="HomeLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAEAAAAEAAIAAAAAAAIAAAAEAAMAAAAAAAMAAAAFAAAAAAABAAAAAAAFAAEAAAABAAEAAAAFAAIAAAABAAIAAAAFAAMAAAABAAMAAAAGAAAAAAACAAAAAAAGAAEAAAACAAEAAAAGAAIAAAACAAIAAAAGAAMAAAACAAMAAAAHAAAAAAADAAAAAAAHAAEAAAADAAEAAAAHAAIAAAADAAIAAAAHAAMAAAADAAMAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAEAAAAIAAIAAAAAAAIAAAAIAAMAAAAAAAMAAAAJAAAAAAABAAAAAAAJAAEAAAABAAEAAAAJAAIAAAABAAIAAAAJAAMAAAABAAMAAAAKAAAAAAACAAAAAAAKAAEAAAACAAEAAAAKAAIAAAACAAIAAAAKAAMAAAACAAMAAAALAAAAAAADAAAAAAALAAEAAAADAAEAAAALAAIAAAADAAIAAAALAAMAAAADAAMAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAEAAAAMAAIAAAAAAAIAAAAMAAMAAAAAAAMAAAANAAAAAAABAAAAAAANAAEAAAABAAEAAAANAAIAAAABAAIAAAANAAMAAAABAAMAAAAOAAAAAAACAAAAAAAOAAEAAAACAAEAAAAOAAIAAAACAAIAAAAOAAMAAAACAAMAAAAPAAAAAAADAAAAAAAPAAEAAAADAAEAAAAPAAIAAAADAAIAAAAPAAMAAAADAAMAAAAQAAAAAAAAAAAAAAAQAAEAAAAAAAEAAAAQAAIAAAAAAAIAAAAQAAMAAAAAAAMAAAARAAAAAAABAAAAAAARAAEAAAABAAEAAAARAAIAAAABAAIAAAARAAMAAAABAAMAAAASAAAAAAACAAAAAAASAAEAAAACAAEAAAASAAIAAAACAAIAAAASAAMAAAACAAMAAAATAAAAAAADAAAAAAATAAEAAAADAAEAAAATAAIAAAADAAIAAAATAAMAAAADAAMAAAAAAPz/AgAAAAAAAAAAAP3/AgAAAAEAAAAAAP7/AgAAAAIAAAAAAP//AgAAAAMAAAABAPz/AgABAAAAAAABAP3/AgABAAEAAAABAP7/AgABAAIAAAABAP//AgABAAMAAAACAPz/AgACAAAAAAACAP3/AgACAAEAAAACAP7/AgACAAIAAAACAP//AgACAAMAAAADAPz/AgADAAAAAAADAP3/AgADAAEAAAADAP7/AgADAAIAAAADAP//AgADAAMAAAAEAPz/AgAAAAAAAAAEAP3/AgAAAAEAAAAEAP7/AgAAAAIAAAAEAP//AgAAAAMAAAAFAPz/AgABAAAAAAAFAP3/AgABAAEAAAAFAP7/AgABAAIAAAAFAP//AgABAAMAAAAGAPz/AgACAAAAAAAGAP3/AgACAAEAAAAGAP7/AgACAAIAAAAGAP//AgACAAMAAAAHAPz/AgADAAAAAAAHAP3/AgADAAEAAAAHAP7/AgADAAIAAAAHAP//AgADAAMAAAAIAPz/AgAAAAAAAAAIAP3/AgAAAAEAAAAIAP7/AgAAAAIAAAAIAP//AgAAAAMAAAAJAPz/AgABAAAAAAAJAP3/AgABAAEAAAAJAP7/AgABAAIAAAAJAP//AgABAAMAAAAKAPz/AgACAAAAAAAKAP3/AgACAAEAAAAKAP7/AgACAAIAAAAKAP//AgACAAMAAAALAPz/AgADAAAAAAALAP3/AgADAAEAAAALAP7/AgADAAIAAAALAP//AgADAAMAAAAMAPz/AgAAAAAAAAAMAP3/AgAAAAEAAAAMAP7/AgAAAAIAAAAMAP//AgAAAAMAAAANAPz/AgABAAAAAAANAP3/AgABAAEAAAANAP7/AgABAAIAAAANAP//AgABAAMAAAAOAPz/AgACAAAAAAAOAP3/AgACAAEAAAAOAP7/AgACAAIAAAAOAP//AgACAAMAAAAPAPz/AgADAAAAAAAPAP3/AgADAAEAAAAPAP7/AgADAAIAAAAPAP//AgADAAMAAAAQAPz/AgAAAAAAAAAQAP3/AgAAAAEAAAAQAP7/AgAAAAIAAAAQAP//AgAAAAMAAAARAPz/AgABAAAAAAARAP3/AgABAAEAAAARAP7/AgABAAIAAAARAP//AgABAAMAAAASAPz/AgACAAAAAAASAP3/AgACAAEAAAASAP7/AgACAAIAAAASAP//AgACAAMAAAATAPz/AgADAAAAAAATAP3/AgADAAEAAAATAP7/AgADAAIAAAATAP//AgADAAMAAAAQAPj/AgAAAAAAAAAQAPn/AgAAAAEAAAAQAPr/AgAAAAIAAAAQAPv/AgAAAAMAAAARAPj/AgABAAAAAAARAPn/AgABAAEAAAARAPr/AgABAAIAAAARAPv/AgABAAMAAAASAPj/AgACAAAAAAASAPn/AgACAAEAAAASAPr/AgACAAIAAAASAPv/AgACAAMAAAATAPj/AgADAAAAAAATAPn/AgADAAEAAAATAPr/AgADAAIAAAATAPv/AgADAAMAAAAMAPj/AgAAAAAAAAAMAPn/AgAAAAEAAAAMAPr/AgAAAAIAAAAMAPv/AgAAAAMAAAANAPj/AgABAAAAAAANAPn/AgABAAEAAAANAPr/AgABAAIAAAANAPv/AgABAAMAAAAOAPj/AgACAAAAAAAOAPn/AgACAAEAAAAOAPr/AgACAAIAAAAOAPv/AgACAAMAAAAPAPj/AgADAAAAAAAPAPn/AgADAAEAAAAPAPr/AgADAAIAAAAPAPv/AgADAAMAAAAIAPj/AgAAAAAAAAAIAPn/AgAAAAEAAAAIAPr/AgAAAAIAAAAIAPv/AgAAAAMAAAAJAPj/AgABAAAAAAAJAPn/AgABAAEAAAAJAPr/AgABAAIAAAAJAPv/AgABAAMAAAAKAPj/AgACAAAAAAAKAPn/AgACAAEAAAAKAPr/AgACAAIAAAAKAPv/AgACAAMAAAALAPj/AgADAAAAAAALAPn/AgADAAEAAAALAPr/AgADAAIAAAALAPv/AgADAAMAAAAEAPj/AgAAAAAAAAAEAPn/AgAAAAEAAAAEAPr/AgAAAAIAAAAEAPv/AgAAAAMAAAAFAPj/AgABAAAAAAAFAPn/AgABAAEAAAAFAPr/AgABAAIAAAAFAPv/AgABAAMAAAAGAPj/AgACAAAAAAAGAPn/AgACAAEAAAAGAPr/AgACAAIAAAAGAPv/AgACAAMAAAAHAPj/AgADAAAAAAAHAPn/AgADAAEAAAAHAPr/AgADAAIAAAAHAPv/AgADAAMAAAAAAPj/AgAAAAAAAAAAAPn/AgAAAAEAAAAAAPr/AgAAAAIAAAAAAPv/AgAAAAMAAAABAPj/AgABAAAAAAABAPn/AgABAAEAAAABAPr/AgABAAIAAAABAPv/AgABAAMAAAACAPj/AgACAAAAAAACAPn/AgACAAEAAAACAPr/AgACAAIAAAACAPv/AgACAAMAAAADAPj/AgADAAAAAAADAPn/AgADAAEAAAADAPr/AgADAAIAAAADAPv/AgADAAMAAAA=")
+tile_set = ExtResource("1_aquux")
+
+[node name="Bed" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bed"]
+position = Vector2(60, -2)
+scale = Vector2(0.213307, 0.212966)
+texture = ExtResource("2_1svtn")
+
+[node name="Area2D" type="Area2D" parent="Bed"]
+script = ExtResource("4_jfdoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Area2D"]
+position = Vector2(71, -6)
+shape = SubResource("RectangleShape2D_j1jao")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bed"]
+polygon = PackedVector2Array(5, -27, 12, -27, 12, -17, 34, -17, 34, -5, 108, -5, 108, -11, 114, -11, 114, 23, 108, 23, 108, 16, 12, 16, 12, 22, 5, 22)
+
+[node name="Door" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Door"]
+position = Vector2(247, -39)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("3_hfb84")
+
+[node name="Area2D" type="Area2D" parent="Door"]
+script = ExtResource("4_0h851")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
+position = Vector2(247.5, -28.5)
+shape = SubResource("RectangleShape2D_jfdoo")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-17, 4)
+script = ExtResource("4_hfb84")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(247, -11)
+texture = ExtResource("4_1svtn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(246.5, -14.5)
+shape = SubResource("RectangleShape2D_hfb84")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(246, -28)
+zoom = Vector2(3.745, 3.745)
+
+[node name="TalkPanel" type="Panel" parent="Player/Camera2D"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TalkLabel" type="Label" parent="Player/Camera2D/TalkPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HomeSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_j1jao")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="Bed/Area2D" to="Bed/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Bed/Area2D" to="Bed/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Door/Area2D" to="Door/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Door/Area2D" to="Door/Area2D" method="_on_body_exited"]
+[connection signal="finished" from="HomeSong" to="." method="_on_home_song_finished"]
